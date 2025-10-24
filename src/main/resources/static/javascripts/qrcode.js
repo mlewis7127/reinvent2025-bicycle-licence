@@ -805,7 +805,6 @@ var qrcode = function() {
         if (c < 128) {
           bytes.push(c);
         } else {
-          // amazonq-ignore-next-line
           var b = charMap[s.charAt(i)];
           if (typeof b == 'number') {
             if ( (b & 0xff) == b) {
@@ -1221,7 +1220,6 @@ var qrcode = function() {
 
       for (var i = 0; i < _this.getLength(); i += 1) {
         for (var j = 0; j < e.getLength(); j += 1) {
-          // amazonq-ignore-next-line
           // amazonq-ignore-next-line
           num[i + j] ^= QRMath.gexp(QRMath.glog(_this.getAt(i) ) + QRMath.glog(e.getAt(j) ) );
         }
