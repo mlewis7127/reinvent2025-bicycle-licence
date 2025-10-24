@@ -131,7 +131,7 @@ public class BicycleLicenceDynamoDBRepository implements CrudRepository<BicycleL
             log.error("Failed to delete {} batches", failedBatches.size());
             StringBuilder errorDetails = new StringBuilder();
             for (DynamoDBMapper.FailedBatch batch : failedBatches) {
-                if (batch.getException() != null) {
+                if (batch != null && batch.getException() != null) {
                     errorDetails.append(batch.getException().getMessage()).append("; ");
                 }
             }
