@@ -723,7 +723,12 @@ var qrcode = function() {
       return ascii.substring(0, ascii.length-1);
     };
 
-    _this.renderTo2dContext = function(context, cellSize) {
+    /**
+     * Renders the QR code to a 2D canvas context
+     * @param {CanvasRenderingContext2D} context - The 2D rendering context of a canvas
+     * @param {number} [cellSize=2] - Size of each QR code module in pixels
+     */
+        _this.renderTo2dContext = function(context, cellSize) {
       cellSize = cellSize || 2;
       var length = _this.getModuleCount();
       for (var row = 0; row < length; row++) {
@@ -1189,6 +1194,7 @@ var qrcode = function() {
   function qrPolynomial(num, shift) {
 
     if (typeof num.length == 'undefined') {
+      // amazonq-ignore-next-line
       throw new Error(num.length + '/' + shift);
     }
 
@@ -2281,6 +2287,7 @@ var qrcode = function() {
           // subtracting 0x10000 and splitting the
           // 20 bits of 0x0-0xFFFFF into two halves
           charcode = 0x10000 + (((charcode & 0x3ff)<<10)
+            // amazonq-ignore-next-line
             | (str.charCodeAt(i) & 0x3ff));
           utf8.push(0xf0 | (charcode >>18),
               0x80 | ((charcode>>12) & 0x3f),

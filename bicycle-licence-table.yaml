@@ -23,9 +23,6 @@ Resources:
       BillingMode: PAY_PER_REQUEST
       PointInTimeRecoverySpecification:
         PointInTimeRecoveryEnabled: true
-      TimeToLiveSpecification:
-        AttributeName: ttl
-        Enabled: true
       GlobalSecondaryIndexes:
         - IndexName: email-index
           KeySchema:
