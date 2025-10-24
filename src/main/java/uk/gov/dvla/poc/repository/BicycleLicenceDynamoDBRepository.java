@@ -126,6 +126,10 @@ public class BicycleLicenceDynamoDBRepository implements CrudRepository<BicycleL
     @Override
     public void deleteAll() {
         log.info("Deleting all licence documents from the DynamoDB table...");
-        dynamoDBMapper.batchDelete(findAll());
+        List<DynamoDBMapper.FailedBatch> failedBatches = dynamoDBMapper.batchDelete(findAll());
+        if (!failedBatches.isEmpty()) {
+            log.error("Failed to delete {} batches", failedBatches.size());
+            throw new RuntimeException("Failed to delete " + failedBatches.size() + " batches: " + failedBatches.get(0).getException().getMessage());
+        }
     }
 }

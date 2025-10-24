@@ -1,0 +1,16 @@
+uk/gov/dvla/poc/model/Licences.class
+uk/gov/dvla/poc/events/PenaltyPointsRemoved.class
+uk/gov/dvla/poc/events/LicenceCreated.class
+uk/gov/dvla/poc/forms/BicycleLicenceQueryForm.class
+uk/gov/dvla/poc/forms/LicenceIdQueryForm.class
+uk/gov/dvla/poc/events/PenaltyPointsAdded.class
+uk/gov/dvla/poc/model/dynamo/LicenceActivity.class
+uk/gov/dvla/poc/events/NameChanged.class
+uk/gov/dvla/poc/model/BicycleLicence.class
+uk/gov/dvla/poc/model/Event.class
+uk/gov/dvla/poc/forms/BicycleLicenceUpdateForm.class
+uk/gov/dvla/poc/forms/BicycleLicenceCreateForm.class
+uk/gov/dvla/poc/model/dynamo/Activity.class
+uk/gov/dvla/poc/events/ContactDetailsChanged.class
+uk/gov/dvla/poc/repository/LicenceActivityDynamoRepository.class
+uk/gov/dvla/poc/BicycleLicenceApplication.class
