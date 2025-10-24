@@ -60,10 +60,11 @@ public class DynamoDBController {
                 licence.addEvent(new PenaltyPointsRemoved(points));
                 licence.setPenaltyPoints(form.getPenaltyPoints());
             } else if (form.getPenaltyPoints() == licence.getPenaltyPoints()) {
-                if (!form.getName().equals(licence.getName())) {
+                if (!Objects.equals(form.getName(), licence.getName())) {
                     licence.addEvent(new NameChanged());
                     licence.setName(form.getName());
-                } else if (!form.getTelephone().equals(licence.getTelephone())) {
+                }
+                if (!Objects.equals(form.getTelephone(), licence.getTelephone())) {
                     licence.addEvent(new ContactDetailsChanged());
                     licence.setTelephone(form.getTelephone());
                 }
