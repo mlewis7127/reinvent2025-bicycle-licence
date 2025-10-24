@@ -129,7 +129,14 @@ public class BicycleLicenceDynamoDBRepository implements CrudRepository<BicycleL
         List<DynamoDBMapper.FailedBatch> failedBatches = dynamoDBMapper.batchDelete(findAll());
         if (!failedBatches.isEmpty()) {
             log.error("Failed to delete {} batches", failedBatches.size());
-            throw new RuntimeException("Failed to delete " + failedBatches.size() + " batches: " + failedBatches.get(0).getException().getMessage());
+            StringBuilder errorDetails = new StringBuilder();
+            for (DynamoDBMapper.FailedBatch batch : failedBatches) {
+                if (batch.getException() != null) {
+                    errorDetails.append(batch.getException().getMessage()).append("; ");
+                }
+            }
+            String errorMsg = errorDetails.length() > 0 ? errorDetails.toString() : "Unknown error";
+            throw new RuntimeException("Failed to delete " + failedBatches.size() + " batches: " + errorMsg);
         }
     }
 }

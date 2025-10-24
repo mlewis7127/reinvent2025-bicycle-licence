@@ -329,7 +329,7 @@
                         var isErr = 'hasError';
                         // when there are an error then show error
                         if (response.indexOf(isErr) > -1) {
-                            $("#queryFragment").html(response);
+                            $("#queryFragment").text(response);
                         } else {
                             var json = $.parseJSON(response);
                             $("#queryForm").hide();
@@ -362,7 +362,7 @@
                         var isErr = 'hasError';
                         // when there are an error then show error
                         if (response.indexOf(isErr) > -1) {
-                            $("#queryFragment").html(response);
+                            $("#queryFragment").text(response);
                         } else {
                             $("#updateLicenceForm").hide();
                             $("#updatename").val("");
