@@ -1,8 +1,5 @@
 package uk.gov.dvla.poc.events;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import uk.gov.dvla.poc.model.Event;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
